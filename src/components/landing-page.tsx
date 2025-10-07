@@ -47,7 +47,7 @@ export default function LandingPage() {
       status: 'completed',
       maintenance: true,
       duration: '6 bulan',
-      image: './seismotrack.png'
+      image: '/seismotrack.png'
     },
     {
       id: '2',
@@ -57,7 +57,7 @@ export default function LandingPage() {
       status: 'in-progress',
       maintenance: false,
       duration: '8 bulan',
-      image: './lms.png'
+      image: '/lms.png'
     },
     {
       id: '3',
@@ -67,7 +67,7 @@ export default function LandingPage() {
       status: 'completed',
       maintenance: true,
       duration: '10 bulan',
-      image: './kuon-yagi.png'
+      image: '/kuon-yagi.png'
     }
   ]);
 
