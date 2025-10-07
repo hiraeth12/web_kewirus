@@ -2,6 +2,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -44,9 +45,11 @@ export default function HeroSection() {
           
           <div className="flex justify-center">
             <div className="bg-white rounded-xl shadow-xl p-8 max-w-sm">
-              <img
-                src="./web-care.png"
+              <Image
+                src="/web-care.png"
                 alt="Web Care Illustration"
+                width={400}
+                height={300}
                 className="w-full h-auto rounded-lg"
               />
               <div className="mt-6 space-y-3">

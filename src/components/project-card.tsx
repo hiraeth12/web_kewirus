@@ -1,5 +1,6 @@
 // components/project-card.tsx
 import React from 'react';
+import Image from 'next/image';
 import { Project } from './types';
 
 interface ProjectCardProps {
@@ -36,9 +37,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
       <div className="relative">
-        <img
+        <Image
           src={project.image || "https://via.placeholder.com/400x200/E5E7EB/9CA3AF?text=Project+Image"}
           alt={project.title}
+          width={400}
+          height={200}
           className="w-full h-48 object-cover"
         />
         <div className="absolute top-4 right-4 flex gap-2">

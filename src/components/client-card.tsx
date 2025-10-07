@@ -28,7 +28,7 @@ export default function ClientCard({ client }: ClientCardProps) {
       </div>
 
       <blockquote className="text-gray-600 italic mt-4">
-        "{client.testimonial}"
+        &ldquo;{client.testimonial}&rdquo;
       </blockquote>
 
       <div className="flex text-yellow-400 mt-4">

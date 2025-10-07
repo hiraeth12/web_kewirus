@@ -7,12 +7,10 @@ import ProjectCard from "./project-card";
 
 interface ProjectsSectionProps {
   projects: Project[];
-  onAddProject: () => void;
 }
 
 export default function ProjectsSection({
   projects,
-  onAddProject,
 }: ProjectsSectionProps) {
   return (
     <section id="projects" className="py-20 bg-gray-50">
@@ -38,7 +36,7 @@ export default function ProjectsSection({
         {projects.length === 0 && (
           <div className="text-center py-12">
             <p className="text-gray-500 text-lg">
-              Belum ada proyek. Klik tombol "Tambah Proyek" untuk menambahkan.
+              Belum ada proyek. Klik tombol &ldquo;Tambah Proyek&rdquo; untuk menambahkan.
             </p>
           </div>
         )}

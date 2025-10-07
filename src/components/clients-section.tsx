@@ -7,10 +7,9 @@ import ClientCard from './client-card';
 
 interface ClientsSectionProps {
   clients: Client[];
-  onAddClient: () => void;
 }
 
-export default function ClientsSection({ clients, onAddClient }: ClientsSectionProps) {
+export default function ClientsSection({ clients }: ClientsSectionProps) {
   return (
     <section id="clients" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -37,7 +36,7 @@ export default function ClientsSection({ clients, onAddClient }: ClientsSectionP
         {clients.length === 0 && (
           <div className="text-center py-12">
             <p className="text-gray-500 text-lg">
-              Belum ada testimoni. Klik tombol "Tambah Testimoni" untuk menambahkan.
+              Belum ada testimoni. Klik tombol &ldquo;Tambah Testimoni&rdquo; untuk menambahkan.
             </p>
           </div>
         )}

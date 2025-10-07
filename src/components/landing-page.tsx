@@ -114,11 +114,9 @@ export default function LandingPage() {
         <PricingTable />
         <ClientsSection 
           clients={clients} 
-          onAddClient={() => setModalType('add-client')} 
         />
         <ProjectsSection 
           projects={projects} 
-          onAddProject={() => setModalType('add-project')} 
         />
         <ContactSection />
       </main>

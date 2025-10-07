@@ -53,7 +53,7 @@ export default function ContactSection() {
       await new Promise(resolve => setTimeout(resolve, 1000));
       setSubmitMessage('Pesan berhasil dikirim! Kami akan menghubungi Anda segera.');
       setFormData({ name: '', email: '', company: '', message: '' });
-    } catch (error) {
+    } catch {
       setSubmitMessage('Terjadi kesalahan. Silakan coba lagi.');
     } finally {
       setIsSubmitting(false);
