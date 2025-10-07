@@ -1,10 +1,12 @@
 // components/hero-section.tsx
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 
 export default function HeroSection() {
+  const [imageError, setImageError] = useState(false);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -45,13 +47,23 @@ export default function HeroSection() {
           
           <div className="flex justify-center">
             <div className="bg-white rounded-xl shadow-xl p-8 max-w-sm">
-              <Image
-                src="/web-care.png"
-                alt="Web Care Illustration"
-                width={400}
-                height={300}
-                className="w-full h-auto rounded-lg"
-              />
+              {!imageError ? (
+                <Image
+                  src="/heroicon.png"
+                  alt="Web Care Illustration"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto rounded-lg"
+                  onError={() => setImageError(true)}
+                />
+              ) : (
+                <div className="w-full h-64 bg-gray-100 rounded-lg flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-gray-400 text-6xl mb-4">🌐</div>
+                    <p className="text-gray-500">Web Care Solutions</p>
+                  </div>
+                </div>
+              )}
               <div className="mt-6 space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>

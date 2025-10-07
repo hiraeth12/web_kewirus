@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: ['via.placeholder.com'],
+    unoptimized: process.env.NODE_ENV === 'development' ? false : true,
+  },
 };
 
 export default nextConfig;

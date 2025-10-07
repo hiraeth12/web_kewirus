@@ -1,5 +1,5 @@
 // components/project-card.tsx
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { Project } from './types';
 
@@ -8,6 +8,8 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const [imageError, setImageError] = useState(false);
+
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'completed':
@@ -37,13 +39,23 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
       <div className="relative">
-        <Image
-          src={project.image || "https://via.placeholder.com/400x200/E5E7EB/9CA3AF?text=Project+Image"}
-          alt={project.title}
-          width={400}
-          height={200}
-          className="w-full h-48 object-cover"
-        />
+        {!imageError && project.image ? (
+          <Image
+            src={project.image}
+            alt={project.title}
+            width={400}
+            height={200}
+            className="w-full h-48 object-cover"
+            onError={() => setImageError(true)}
+          />
+        ) : (
+          <div className="w-full h-48 bg-gray-200 flex items-center justify-center">
+            <div className="text-center">
+              <div className="text-gray-400 text-4xl mb-2">📁</div>
+              <p className="text-gray-500 text-sm">Project Image</p>
+            </div>
+          </div>
+        )}
         <div className="absolute top-4 right-4 flex gap-2">
           <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(project.status)}`}>
             {getStatusText(project.status)}
