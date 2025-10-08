@@ -49,7 +49,7 @@ export default function HeroSection() {
             <div className="bg-white rounded-xl shadow-xl p-8 max-w-sm">
               {!imageError ? (
                 <Image
-                  src="/images/heroicon.png"
+                  src="./images/heroicon.png"
                   alt="Web Care Illustration"
                   width={400}
                   height={300}
