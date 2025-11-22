@@ -1,6 +1,6 @@
 // app/page.tsx
-import LandingPage from '../components/landing-page';
+import FuturisticLanding from '../components/futuristic-landing';
 
 export default function Home() {
-  return <LandingPage />;
+  return <FuturisticLanding />;
 }
