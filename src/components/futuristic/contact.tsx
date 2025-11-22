@@ -27,8 +27,8 @@ const socialLinks = [
     id: 'whatsapp',
     name: 'WhatsApp',
     icon: WhatsAppIcon,
-    handle: '+62 812-3483-2639',
-    href: 'https://wa.me/628123482639',
+    handle: '+62 81234832639',
+    href: 'https://wa.me/+6281234832639',
   },
   {
     id: 'email',
@@ -139,7 +139,7 @@ export default function FuturisticContact() {
             
             {/* WhatsApp CTA Button */}
             <a
-              href="https://wa.me/628123482639"
+              href="https://wa.me/+6281234832639"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 px-8 py-3 rounded-xl bg-gradient-to-r from-[#38BDF8] via-[#0ea5e9] to-[#38BDF8] bg-[length:200%_100%] animate-gradient-slide text-white font-semibold shadow-lg hover:shadow-[0_0_40px_rgba(56,189,248,0.6)] transition-all duration-300 hover:scale-105 relative overflow-hidden"
