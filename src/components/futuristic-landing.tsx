@@ -31,17 +31,15 @@ export default function FuturisticLanding() {
   return (
     <div className="min-h-screen bg-[#0F172A] text-white font-mono">
       <FuturisticNavbar />
-      <main className="pt-6">
+      <main className="pt-6 md:pt-6">
         <FuturisticHero />
-        <div className="max-w-6xl mx-auto px-6">
-          <FuturisticServices />
-          <FuturisticFeatures />
-          <FuturisticPortfolio />
-          <FuturisticPricing />
-          <FuturisticTestimonials />
-          <FuturisticFAQ />
-          <FuturisticContact />
-        </div>
+        <FuturisticServices />
+        <FuturisticFeatures />
+        <FuturisticPortfolio />
+        <FuturisticPricing />
+        <FuturisticTestimonials />
+        <FuturisticFAQ />
+        <FuturisticContact />
       </main>
       <FuturisticFooter />
     </div>

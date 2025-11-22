@@ -132,4 +132,6 @@ export const floatY: Variants = {
   },
 };
 
-export default { staggerContainer, fadeIn, scrollFadeIn, scrollScale, scrollStagger, slideIn, floatY };
+const variants = { staggerContainer, fadeIn, scrollFadeIn, scrollScale, scrollStagger, slideIn, floatY };
+
+export default variants;

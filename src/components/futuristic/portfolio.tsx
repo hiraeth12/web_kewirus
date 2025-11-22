@@ -31,8 +31,8 @@ const items = [
 
 export default function FuturisticPortfolio() {
   return (
-    <section id="portfolio" className="py-16">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="portfolio" className="py-12 sm:py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.h2 
           variants={variants.scrollFadeIn('up', 0)}
           initial="hidden"
@@ -52,7 +52,7 @@ export default function FuturisticPortfolio() {
           viewport={{ once: false, amount: 0.1, margin: "-50px" }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {items.map((it, i) => (
+          {items.map((it) => (
             <motion.div 
               key={it.id} 
               variants={variants.scrollScale(0)}

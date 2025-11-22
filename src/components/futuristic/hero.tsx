@@ -7,8 +7,8 @@ import variants from '../../lib/variants';
 // Hero section with framer-motion animations
 export default function FuturisticHero() {
   return (
-    <section id="hero" className="relative overflow-hidden pt-28 pb-20">
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <section id="hero" className="relative overflow-hidden pt-24 pb-12 sm:pt-28 sm:pb-16 md:pb-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
         <motion.div
           initial="hidden"
           animate="show"

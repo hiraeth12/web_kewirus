@@ -12,8 +12,8 @@ const services = [
 
 export default function FuturisticServices() {
   return (
-    <section id="services" className="py-16">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="services" className="py-12 sm:py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.h2 
           variants={variants.scrollFadeIn('up', 0)}
           initial="hidden"

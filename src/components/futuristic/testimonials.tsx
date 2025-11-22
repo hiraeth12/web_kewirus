@@ -12,8 +12,8 @@ export default function FuturisticTestimonials() {
   const [index, setIndex] = useState(0);
 
   return (
-    <section id="testimonials" className="py-12">
-      <div className="max-w-4xl mx-auto px-6">
+    <section id="testimonials" className="py-10 sm:py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <motion.h2 
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ export default function FuturisticTestimonials() {
             {data.map((d) => (
               <div key={d.id} className="min-w-full px-4">
                 <div className="p-6 rounded-xl bg-[#0F172A]/50 border border-white/6">
-                  <p className="text-slate-200">"{d.text}"</p>
+                  <p className="text-slate-200">&quot;{d.text}&quot;</p>
                   <div className="mt-4 text-sm text-slate-400">— {d.name}</div>
                 </div>
               </div>
@@ -45,8 +45,8 @@ export default function FuturisticTestimonials() {
           </motion.div>
 
           <div className="flex gap-2 mt-4 justify-center">
-            {data.map((_, i) => (
-              <button key={i} onClick={() => setIndex(i)} className={`w-3 h-3 rounded-full ${i === index ? 'bg-[#38BDF8]' : 'bg-white/10'}`} />
+            {data.map((_, idx) => (
+              <button key={idx} onClick={() => setIndex(idx)} className={`w-3 h-3 rounded-full ${idx === index ? 'bg-[#38BDF8]' : 'bg-white/10'}`} />
             ))}
           </div>
         </motion.div>

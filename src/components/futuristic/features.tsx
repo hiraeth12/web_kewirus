@@ -11,8 +11,8 @@ const feats = [
 
 export default function FuturisticFeatures() {
   return (
-    <section id="features" className="py-12">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="features" className="py-10 sm:py-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.h2 
           variants={variants.scrollFadeIn('up', 0)} 
           initial="hidden" 
@@ -32,7 +32,7 @@ export default function FuturisticFeatures() {
           viewport={{ once: false, amount: 0.2, margin: "-50px" }}
           className="grid grid-cols-1 sm:grid-cols-3 gap-6"
         >
-          {feats.map((f, i) => (
+          {feats.map((f) => (
             <motion.div 
               key={f.id} 
               variants={variants.scrollFadeIn('up', 0)} 

@@ -1,6 +1,5 @@
 "use client";
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -82,6 +81,7 @@ const NavItem: React.FC<NavItemProps> = ({
 export default function FuturisticNavbar() {
   const [hoveredNav, setHoveredNav] = React.useState<string | null>(null);
   const [activeNav, setActiveNav] = React.useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -111,6 +111,7 @@ export default function FuturisticNavbar() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setActiveNav(id);
+      setMobileMenuOpen(false); // Close mobile menu after navigation
     }
   };
 
@@ -148,8 +149,8 @@ export default function FuturisticNavbar() {
         }
       `}</style>
 
-      <nav className="fixed left-0 right-0 top-6 z-40 mx-auto max-w-7xl px-6">
-        <div className="backdrop-blur-md bg-white/4 dark:bg-[#0F172A]/60 border border-white/6 dark:border-[#38BDF822] rounded-2xl px-8 py-4 flex items-center justify-between shadow-[0_4px_30px_rgba(56,189,248,0.06)]">
+      <nav className="fixed left-0 right-0 top-4 sm:top-6 z-40 mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="backdrop-blur-md bg-white/4 dark:bg-[#0F172A]/60 border border-white/6 dark:border-[#38BDF822] rounded-2xl px-4 sm:px-6 md:px-8 py-3 sm:py-4 flex items-center justify-between shadow-[0_4px_30px_rgba(56,189,248,0.06)]">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -221,13 +222,86 @@ export default function FuturisticNavbar() {
             whileTap={{ scale: 0.95 }}
           >
             <button 
-              aria-label="open menu" 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="toggle menu" 
               className="p-2.5 rounded-lg border border-white/6 hover:bg-white/5 transition-colors duration-300 text-lg"
             >
-              ☰
+              {mobileMenuOpen ? '✕' : '☰'}
             </button>
           </motion.div>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0, y: -20 }}
+              animate={{ opacity: 1, height: 'auto', y: 0 }}
+              exit={{ opacity: 0, height: 0, y: -20 }}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
+              className="md:hidden mt-4 backdrop-blur-md bg-white/4 dark:bg-[#0F172A]/60 border border-white/6 dark:border-[#38BDF822] rounded-2xl overflow-hidden shadow-[0_4px_30px_rgba(56,189,248,0.06)]"
+            >
+              <div className="flex flex-col py-4">
+                <a
+                  href="#services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('#services');
+                  }}
+                  className={`px-6 py-3 transition-colors duration-200 ${
+                    activeNav === '#services'
+                      ? 'bg-[#38BDF8]/10 text-[#38BDF8] border-l-4 border-[#38BDF8]'
+                      : 'text-slate-200 hover:bg-white/5'
+                  }`}
+                >
+                  Layanan
+                </a>
+                <a
+                  href="#portfolio"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('#portfolio');
+                  }}
+                  className={`px-6 py-3 transition-colors duration-200 ${
+                    activeNav === '#portfolio'
+                      ? 'bg-[#38BDF8]/10 text-[#38BDF8] border-l-4 border-[#38BDF8]'
+                      : 'text-slate-200 hover:bg-white/5'
+                  }`}
+                >
+                  Portfolio
+                </a>
+                <a
+                  href="#pricing"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('#pricing');
+                  }}
+                  className={`px-6 py-3 transition-colors duration-200 ${
+                    activeNav === '#pricing'
+                      ? 'bg-[#38BDF8]/10 text-[#38BDF8] border-l-4 border-[#38BDF8]'
+                      : 'text-slate-200 hover:bg-white/5'
+                  }`}
+                >
+                  Pricing
+                </a>
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection('#contact');
+                  }}
+                  className={`px-6 py-3 transition-colors duration-200 ${
+                    activeNav === '#contact'
+                      ? 'bg-[#38BDF8]/10 text-[#38BDF8] border-l-4 border-[#38BDF8]'
+                      : 'text-slate-200 hover:bg-white/5'
+                  }`}
+                >
+                  Kontak
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
     </>
   );
