@@ -149,19 +149,6 @@ export default function FuturisticPricing() {
                   </motion.li>
                 ))}
               </ul>
-
-              {/* CTA Button */}
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 ${
-                  plan.featured
-                    ? 'bg-gradient-to-r from-[#38BDF8] to-cyan-400 text-[#04142b] shadow-[0_8px_30px_rgba(56,189,248,0.3)] hover:shadow-[0_8px_40px_rgba(56,189,248,0.4)]'
-                    : 'bg-white/5 text-white border border-white/10 hover:bg-white/10 hover:border-[#38BDF8]/50'
-                }`}
-              >
-                Pilih {plan.title}
-              </motion.button>
             </motion.div>
           ))}
         </div>

@@ -21,10 +21,10 @@ const items = [
   },
   { 
     id: 3, 
-    title: 'LMS Praktikum', 
-    description: 'Website Praktikum ',
-    image: '/images/lms.png',
-    tags: ['Next.js', 'FastAPI', 'Python']
+    title: 'Personal Portfolio', 
+    description: 'Portfolio pribadi untuk menampilkan proyek dan keterampilan saya',
+    image: '/images/porto.png',
+    tags: ['Next.js',' Tailwind', 'TypeScript']
   },
  
 ];
